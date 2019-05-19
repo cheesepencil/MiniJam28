@@ -10,12 +10,20 @@ export class TitleScene extends Phaser.Scene {
         this.add.bitmapText(128, 128, 'PressStart2P-White', 'GAME TITLE!')
             .setOrigin(0.5, 0.5);
 
-        this.add.bitmapText(128, 248, 'PressStart2P-White', 'press start/space...')
+        const spaceBarText = this.add.bitmapText(128, 248, 'PressStart2P-White', '(press space)')
             .setOrigin(0.5, 1);
+
+        this.tweens.add({
+            targets: spaceBarText,
+            alpha: 0,
+            yoyo: true,
+            duration: 1000,
+            repeat: -1
+        });
 
         this.space = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE, true);
 
-        this.cameras.main.fadeIn(2000, 0, 0, 0, this.fadeCheck, this);
+        this.cameras.main.fadeIn(500, 0, 0, 0, this.fadeCheck, this);
     }
 
     update(): void {

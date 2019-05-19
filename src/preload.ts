@@ -1,3 +1,6 @@
+const lawn = require('./images/lawn.png');
+const crappySprite = require('./images/crappySprite.png');
+
 export class PreloadScene extends Phaser.Scene {
     private bmtLoading: Phaser.GameObjects.BitmapText;
 
@@ -11,6 +14,8 @@ export class PreloadScene extends Phaser.Scene {
             .setOrigin(0.5, 0.5);
 
         // load all resources here
+        this.load.image('lawn', lawn);
+        this.load.image('crappySprite', crappySprite);
     }
 
     create(): void {

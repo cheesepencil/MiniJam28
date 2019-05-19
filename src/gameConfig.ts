@@ -2,6 +2,7 @@ import { BootScene } from './boot';
 import { PreloadScene } from './preload';
 import { TitleScene } from './titleScene';
 import { GameScene } from './gameScene';
+import { UIScene } from './uiScene';
 
 export const PhaserGameConfig: Phaser.Types.Core.GameConfig = {
     type: Phaser.AUTO,
@@ -15,7 +16,7 @@ export const PhaserGameConfig: Phaser.Types.Core.GameConfig = {
     physics: {
         default: 'arcade',
         arcade: {
-            gravity: { y: 200 }
+            gravity: { y: 0 }
         }
     },
     width: 256,
@@ -25,6 +26,7 @@ export const PhaserGameConfig: Phaser.Types.Core.GameConfig = {
         new BootScene(),
         new PreloadScene(),
         new TitleScene(),
-        new GameScene()
+        new GameScene(),
+        new UIScene()
     ] 
 };
